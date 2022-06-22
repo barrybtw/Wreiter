@@ -14,7 +14,7 @@ export const appRouter = createRouter()
       return posts;
     },
   })
-  .mutation("createPost", {
+  .mutation("create-post", {
     input: z.object({
       title: z.string(),
       content: z.string(),

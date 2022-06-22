@@ -1,8 +1,6 @@
 import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import { prisma } from "./../../../server/db";
-
-// Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import type { PrismaClient } from "@prisma/client";
 
@@ -33,4 +31,9 @@ export default NextAuth({
   session: {
     strategy: "jwt",
   },
+  theme: {
+    colorScheme: "dark",
+    brandColor: "#A020F0",
+  },
+  secret: process.env.secret as string,
 });
